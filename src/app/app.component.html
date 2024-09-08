@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="preview-img">
-      <img #previewImg src="https://ajay-dhangar.github.io/Image-Editor/image-placeholder.svg" alt="preview-img">
+      <img (click)="!imageSelected ? chooseImage() : noAction()" #previewImg src="https://ajay-dhangar.github.io/Image-Editor/image-placeholder.svg" alt="preview-img">
     </div>
   </div>
   <div class="controls">

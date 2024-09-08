@@ -36,6 +36,7 @@ export class AppComponent {
     const fileInput:any = event.target as HTMLInputElement;
     const file = fileInput.files[0];
     if (!file) return;
+    this.imageSelected = true
 
     const imgElement = this.previewImg.nativeElement as HTMLImageElement;
     imgElement.src = URL.createObjectURL(file);
@@ -140,6 +141,12 @@ export class AppComponent {
   chooseImage() {
     const fileInput:any = document.querySelector('.file-input');
     fileInput.click();
+  }
+
+  imageSelected: boolean = false
+
+  noAction(){
+
   }
 
 
