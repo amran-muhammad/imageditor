@@ -5,10 +5,8 @@
       <div class="filter">
         <label class="title">Filters</label>
         <div class="options">
-          <button *ngFor="let option of filterOptions" 
-                  [id]="option.id" 
-                  [class.active]="option.active"
-                  (click)="selectFilter(option)">
+          <button *ngFor="let option of filterOptions" [id]="option.id" [class.active]="option.active"
+            (click)="selectFilter(option)">
             {{ option.name }}
           </button>
         </div>
@@ -17,37 +15,31 @@
             <p class="name">{{ selectedFilter.name }}</p>
             <p class="value">{{ filterSlider.value }}%</p>
           </div>
-          <input type="range" 
-                 [value]="filterSlider.value" 
-                 [min]="0" 
-                 [max]="filterSlider.max" 
-                 (input)="updateFilter()"
-                 [(ngModel)]="filterSlider.value">
+          <input type="range" [value]="filterSlider.value" [min]="0" [max]="filterSlider.max" (input)="updateFilter()"
+            [(ngModel)]="filterSlider.value">
         </div>
       </div>
-      <div class="filter">
+      <div class="filter" style="margin-top: 25px;">
         <label class="title">Rotate & Flip</label>
-        <div class="options">
+        <div class="options options-icon">
           <button id="left" (click)="rotateImage('left')">
-            Rotate Left
+            <img src="assets/img/rotate-2.svg" alt="">
           </button>
           <button id="right" (click)="rotateImage('right')">
-            Rotate Right
+            <img src="assets/img/rotate-1.svg" alt="">
           </button>
-         
-        </div>
-        <div class="options">
           <button id="horizontal" (click)="flipImage('horizontal')">
-            Horizontal
+            <img src="assets/img/flip1.svg" alt="">
           </button>
           <button id="vertical" (click)="flipImage('vertical')">
-            Vertical
+            <img src="assets/img/flip2.svg" alt="">
           </button>
         </div>
       </div>
     </div>
     <div class="preview-img">
-      <img (click)="!imageSelected ? chooseImage() : noAction()" #previewImg src="https://ajay-dhangar.github.io/Image-Editor/image-placeholder.svg" alt="preview-img">
+      <img (click)="!imageSelected ? chooseImage() : noAction()" #previewImg
+        src="https://ajay-dhangar.github.io/Image-Editor/image-placeholder.svg" alt="preview-img">
     </div>
   </div>
   <div class="controls">
